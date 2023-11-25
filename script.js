@@ -20,30 +20,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     bellCase.addEventListener('click', function(event) {
         toggleNotifPopup();
-        // Hide dropdown popup when notification bell is clicked
         dropdownPopup.classList.remove('active');
-        event.stopPropagation(); // Prevents the click event from propagating further
+        event.stopPropagation();
     });
 
-    // Adding a click event listener to the document
     document.addEventListener('click', function(event) {
         const clickedElement = event.target;
 
-        // Check if the clicked element is not within the specified elements
         if (
             !clickedElement.closest('.name-case') &&
             !clickedElement.closest('.dropdown-popup') &&
             !clickedElement.closest('.bell-case') &&
             !clickedElement.closest('.notif-popup')
         ) {
-            // Hide the popups if they are currently active
             dropdownPopup.classList.remove('active');
             notifPopup.classList.remove('show');
         }
     });
 });
 
-// AROOW TOGGLE FUNCTION * 
+// ARRoW TOGGLE FUNCTION * 
 document.addEventListener('DOMContentLoaded', function() {
     const upArrow = document.querySelector('.up-arrow');
     const upArrowIcon = document.querySelector('.up-arrow-icon');
@@ -69,9 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             upArrowIcon.src = 'https://crushingit.tech/hackathon-assets/icon-arrow-up.svg';
             taskContents.forEach(taskContent => {
-                taskContent.style.maxHeight = '1000px'; // Adjust this value as needed
-                taskContent.style.paddingTop = '10px'; // Adjust this value as needed
-                taskContent.style.paddingBottom = '10px'; // Adjust this value as needed
+                taskContent.style.maxHeight = '1000px'; 
+                taskContent.style.paddingTop = '10px'; 
+                taskContent.style.paddingBottom = '10px'; 
                 taskContent.style.overflow = 'visible';
             });
         }
@@ -105,14 +101,17 @@ function increaseAndDecreaseCompletionLevel() {
 
 const cancelSvg = document.querySelector('.cancel-svg');
 const planDiv = document.querySelector('.plan-div');
+const invisible = document.querySelector('.invisibleClass');
 
-    cancelSvg.addEventListener('click', function() {
-        planDiv.style.display = 'none';
-    });
+cancelSvg.addEventListener('click', () => {
+    planDiv.style.display = 'none';
+    invisible.classList.toggle('visible'); 
+});
 
-    // toggle check mark
+
     function toggleCheckmark(element) {
         element.classList.toggle('checked');
+
     }
 
 
@@ -139,17 +138,15 @@ const planDiv = document.querySelector('.plan-div');
     
             collapseAllExcept(clickedDiv);
     
-            // Toggle the display property of the second-task div
-            secondTask.style.display = secondTask.style.display === 'none' ? 'flex' : 'none'; // Toggle current one
+            secondTask.style.display = secondTask.style.display === 'none' ? 'flex' : 'none';
     
             if (secondTask.style.display === 'none') {
-                clickedDiv.parentElement.classList.add('no-bg-color'); // Close current task
+                clickedDiv.parentElement.classList.add('no-bg-color'); 
             } else {
-                clickedDiv.parentElement.classList.remove('no-bg-color'); // Open current task
+                clickedDiv.parentElement.classList.remove('no-bg-color');
             }
     
             if (currentIndex !== allTaskContents.length - 1 && secondTask.style.display === 'none') {
-                // Open the next second-task if the current one was closed
                 const nextTaskContent = allTaskContents[currentIndex + 1];
                 const nextSecondTask = nextTaskContent.querySelector('.second-task');
                 nextSecondTask.style.display = 'flex';
@@ -157,7 +154,6 @@ const planDiv = document.querySelector('.plan-div');
             }
         }
     
-        // Open the first task-content on page load
         collapseAllExcept(taskContents[0].querySelector('.first-task'));
     
         taskContents.forEach((taskContent) => {
