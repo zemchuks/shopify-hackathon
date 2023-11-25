@@ -4,19 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const bellCase = document.querySelector('.bell-case');
     const notifPopup = document.querySelector('.notif-popup');
 
-    function toggleDropdownPopup() {
+    const toggleDropdownPopup = () => {
         dropdownPopup.classList.toggle('active');
     }
 
-    function toggleNotifPopup() {
+    const toggleNotifPopup = () => {
         notifPopup.classList.toggle('show');
     }
 
     nameCase.addEventListener('click', function(event) {
         toggleDropdownPopup();
-        // Hide notification popup when dropdown is clicked
         notifPopup.classList.remove('show');
-        event.stopPropagation(); // Prevents the click event from propagating further
+        event.stopPropagation();
     });
 
     bellCase.addEventListener('click', function(event) {
@@ -79,6 +78,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// ***********************INCREASE LEVEL FUNCTION************
+function increaseAndDecreaseCompletionLevel() {
+    const circleDivs = document.querySelectorAll('.circle-div');
+    let checkedCount = 0;
+
+    circleDivs.forEach(circle => {
+        if (circle.classList.contains('checked')) {
+            checkedCount++;
+        }
+    });
+
+    completedTasks = checkedCount;
+
+    const completeLevel = document.querySelector('.complete-level');
+    completeLevel.textContent = `${completedTasks} / 5 Completed`;
+
+    const progressFilled = document.querySelector('.progress-filled');
+    const progressUnfilled = document.querySelector('.progress-unfilled');
+    const progressWidth = (completedTasks / 5) * 100; 
+    progressFilled.style.width = `${progressWidth}%`;
+    progressUnfilled.style.width = `${100 - progressWidth}%`;
+}
 
 
 
@@ -89,86 +110,68 @@ const planDiv = document.querySelector('.plan-div');
         planDiv.style.display = 'none';
     });
 
+    // toggle check mark
     function toggleCheckmark(element) {
         element.classList.toggle('checked');
     }
 
 
-    // function to collase and expand task
+  
+    //****************function to toggle each step and close the previous one */ 
     document.addEventListener('DOMContentLoaded', function() {
         const taskContents = document.querySelectorAll('.task-content');
     
         function collapseAllExcept(clickedDiv) {
-            taskContents.forEach((taskContent, index) => {
-                if (index !== 0 && taskContent !== clickedDiv.parentElement) {
-                    const secondTask = taskContent.querySelector('.second-task');
+            taskContents.forEach((taskContent) => {
+                const secondTask = taskContent.querySelector('.second-task');
+                if (taskContent !== clickedDiv.parentElement) {
                     secondTask.style.display = 'none';
                     taskContent.classList.add('no-bg-color');
                 }
             });
         }
     
-        // Call the function to collapse all except the first initially
-        collapseAllExcept(taskContents[0]);
-    
         function toggleContentVisibility(clickedDiv) {
-            const secondTask = clickedDiv.nextElementSibling;
+            const parentTaskContent = clickedDiv.closest('.task-content');
+            const secondTask = parentTaskContent.querySelector('.second-task');
+            const allTaskContents = Array.from(taskContents);
+            const currentIndex = allTaskContents.indexOf(parentTaskContent);
     
             collapseAllExcept(clickedDiv);
     
             // Toggle the display property of the second-task div
-            secondTask.style.display = secondTask.style.display === 'none' ? 'flex' : 'none';
+            secondTask.style.display = secondTask.style.display === 'none' ? 'flex' : 'none'; // Toggle current one
     
-            // Toggle the class to remove or reapply background color
             if (secondTask.style.display === 'none') {
-                clickedDiv.parentElement.classList.add('no-bg-color');
+                clickedDiv.parentElement.classList.add('no-bg-color'); // Close current task
             } else {
-                clickedDiv.parentElement.classList.remove('no-bg-color');
+                clickedDiv.parentElement.classList.remove('no-bg-color'); // Open current task
+            }
+    
+            if (currentIndex !== allTaskContents.length - 1 && secondTask.style.display === 'none') {
+                // Open the next second-task if the current one was closed
+                const nextTaskContent = allTaskContents[currentIndex + 1];
+                const nextSecondTask = nextTaskContent.querySelector('.second-task');
+                nextSecondTask.style.display = 'flex';
+                nextTaskContent.classList.remove('no-bg-color');
             }
         }
     
+        // Open the first task-content on page load
+        collapseAllExcept(taskContents[0].querySelector('.first-task'));
+    
         taskContents.forEach((taskContent) => {
             const firstTask = taskContent.querySelector('.first-task');
+            const circleDiv = taskContent.querySelector('.circle-div');
     
             firstTask.addEventListener('click', function() {
+                toggleContentVisibility(this);
+            });
+    
+            circleDiv.addEventListener('click', function() {
                 toggleContentVisibility(this);
             });
         });
     });
     
- 
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     const taskContents = document.querySelectorAll('.task-content');
-    
-    //     function collapseAllExcept(clickedDiv) {
-    //         taskContents.forEach((taskContent, index) => {
-    //             const secondTask = taskContent.querySelector('.second-task');
-    //             if (index !== 0 && taskContent !== clickedDiv.parentElement) {
-    //                 secondTask.style.display = 'none';
-    //                 taskContent.style.background = 'none'; // Reset the background color
-    //             }
-    //         });
-    //     }
-    //     // Call the function to collapse all except the first initially
-    //     collapseAllExcept(taskContents[0]);
-    
-    //     // Function to toggle visibility of second-task divs on click
-    //     function toggleContentVisibility(clickedDiv) {
-    //         const secondTask = clickedDiv.nextElementSibling; // Get the sibling with class .second-task
-    
-    //         collapseAllExcept(clickedDiv);
-    
-    //         // Toggle the display property of the second-task div
-    //         secondTask.style.display = secondTask.style.display === 'none' ? 'block' : 'none';
-    //     }
-    
-    //     // Add click event listeners to each first-task div
-    //     taskContents.forEach((taskContent) => {
-    //         const firstTask = taskContent.querySelector('.first-task');
-    
-    //         firstTask.addEventListener('click', function() {
-    //             toggleContentVisibility(this);
-    //         });
-    //     });
-    // });
     
