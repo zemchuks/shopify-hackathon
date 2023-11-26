@@ -37,6 +37,7 @@ body {
     padding-left: 7px;
     padding: 5px 0;
     position: relative;
+    margin-left: 12px;
 }
 
 .search-bar:hover {
@@ -195,6 +196,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+.first a {
+    text-decoration: none;
+}
 
 .others a {
     padding: 5px;
@@ -226,6 +230,7 @@ body {
 .small {
     font-size: 13px !important;
     color: #959595;
+    margin-top: -15px;
 }
 
 .six {
@@ -500,22 +505,17 @@ body {
     text-align: center;
     cursor: pointer;
     position: relative;
-    /* For absolute positioning of checkmark */
     transition: transform 0.3s ease, border-style 0.3s ease, background-color 0.3s ease;
-    /* Added transform and background-color to transition */
 }
 
-/* Add keyframes for the animation */
 @keyframes checkAnimation {
     0% {
         transform: rotate(0deg) scale(1);
-        /* Start from no rotation and regular size */
         background-color: transparent;
     }
 
     50% {
         transform: rotate(180deg) scale(1.2);
-        /* Rotate halfway and scale up */
         background-color: transparent;
     }
 
@@ -541,8 +541,22 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
+.spinner {
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .hide-checked.checked {
+    display: none; /* Initially hide checked class */
+  }
 
 .circle-div:hover {
     border-style: solid;
@@ -689,7 +703,7 @@ body {
     color: #fff;
     /* width: 100%; */
     padding: 7px;
-    margin-left: 90px;
+    margin-left: 75px;
 
     border-radius: 10px;
 }

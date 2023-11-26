@@ -101,11 +101,9 @@ function increaseAndDecreaseCompletionLevel() {
 
 const cancelSvg = document.querySelector('.cancel-svg');
 const planDiv = document.querySelector('.plan-div');
-const invisible = document.querySelector('.invisibleClass');
 
 cancelSvg.addEventListener('click', () => {
     planDiv.style.display = 'none';
-    invisible.classList.toggle('visible'); 
 });
 
 
