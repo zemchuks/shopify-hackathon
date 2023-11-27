@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+//  ********8JAVASCRIPT CODE FOR FUNCTIONALITY OF THE SHOPIFY HACKATHON &***********
+
+// ****FUNCTION TO TOGGLE THE BELL ICON AND STORE NAME ICON ONCLICK******
+document.addEventListener('DOMContentLoaded', () => {
     const nameCase = document.querySelector('.name-case');
     const dropdownPopup = document.querySelector('.dropdown-popup');
     const bellCase = document.querySelector('.bell-case');
@@ -12,19 +15,19 @@ document.addEventListener('DOMContentLoaded', function() {
         notifPopup.classList.toggle('show');
     }
 
-    nameCase.addEventListener('click', function(event) {
+    nameCase.addEventListener('click', (event) => {
         toggleDropdownPopup();
         notifPopup.classList.remove('show');
         event.stopPropagation();
     });
 
-    bellCase.addEventListener('click', function(event) {
+    bellCase.addEventListener('click', (event) => {
         toggleNotifPopup();
         dropdownPopup.classList.remove('active');
         event.stopPropagation();
     });
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', (event) => {
         const clickedElement = event.target;
 
         if (
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     upArrow.addEventListener('click', function() {
         isCollapsed = !isCollapsed;
-
+// if the task content div is not collapsed, show the down icon
         if (isCollapsed) {
             upArrowIcon.src = 'https://crushingit.tech/hackathon-assets/icon-arrow-down.svg';
             taskContents.forEach(taskContent => {
@@ -63,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         } else {
+            // else show the up icon
             upArrowIcon.src = 'https://crushingit.tech/hackathon-assets/icon-arrow-up.svg';
             taskContents.forEach(taskContent => {
                 taskContent.style.maxHeight = '1000px'; 
@@ -107,10 +111,24 @@ cancelSvg.addEventListener('click', () => {
 });
 
 
-    function toggleCheckmark(element) {
-        element.classList.toggle('checked');
+function toggleCheckmark(element) {
+    const isChecked = element.classList.contains('checked');
 
+    if (!isChecked) {
+        element.classList.add('spinner-active'); // Add a class to activate spinner animation
+        setTimeout(() => {
+            element.classList.remove('spinner-active'); // Hide spinner after 1.5 seconds
+            element.classList.add('checked'); // Show checked class after spinner
+            increaseAndDecreaseCompletionLevel(); // Update completion level after modifying classes
+        }, 1000);
+    } else {
+        element.classList.remove('checked'); // Hide checked class immediately
+        increaseAndDecreaseCompletionLevel(); // Update completion level after modifying classes
     }
+}
+
+
+
 
 
   
@@ -128,6 +146,7 @@ cancelSvg.addEventListener('click', () => {
             });
         }
     
+        // *****THIS FUNCTION IS TO COLLAPSE ALL THE OTHER SECOND TASK DIVS IF THE FIRST TASK CLASS IT TOGGLED
         function toggleContentVisibility(clickedDiv) {
             const parentTaskContent = clickedDiv.closest('.task-content');
             const secondTask = parentTaskContent.querySelector('.second-task');
@@ -154,6 +173,7 @@ cancelSvg.addEventListener('click', () => {
     
         collapseAllExcept(taskContents[0].querySelector('.first-task'));
     
+        // *****FOR EACH TASK, TOGGLE THE SECOND DIV OF EACH8********
         taskContents.forEach((taskContent) => {
             const firstTask = taskContent.querySelector('.first-task');
             const circleDiv = taskContent.querySelector('.circle-div');

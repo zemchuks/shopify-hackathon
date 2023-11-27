@@ -6,7 +6,7 @@ body {
 }
 
 .navbar {
-    background-color: #1c181d;
+    background-color: #1A1A1A;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,7 +70,7 @@ body {
 }
 
 .bell-case {
-    background-color: #303030;
+    background-color: #1A1A1A;
     padding: 2px 5px;
     align-self: center;
     border-radius: 5px;
@@ -320,19 +320,19 @@ body {
 
 .dashed {
     border: 1px solid #ececec;
-    width: 350% !important;
-    margin-left: -5%;
+    max-width: 400% !important;
+    /* margin-left: 8%; */
 }
 
 /* *************************SECOND SECTION @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 .plan-div {
     background-color: #1c181d;
-    padding: 4px 2px;
+    padding: 8px 2px;
     display: block;
     align-items: center;
     justify-content: space-between;
     color: white;
-    max-width: 830px;
+    max-width: 845px;
     margin: auto;
     margin-top: 30px;
     position: relative;
@@ -459,6 +459,7 @@ body {
     height: 100%;
     border-radius: 8px;
     background-color: #201f1f;
+    transition: width 0.5s ease;
 }
 
 .progress-unfilled {
@@ -470,6 +471,7 @@ body {
     height: 100%;
     border-radius: 8px;
     background-color: #dddada;
+    transition: width 0.5s ease;
     /* Keeping it transparent as it represents unfilled part */
 }
 
@@ -554,9 +556,25 @@ body {
       transform: rotate(360deg);
     }
   }
-  .hide-checked.checked {
-    display: none; /* Initially hide checked class */
+    .circle-div.spinner-active {
+    border-color: white; /* Change border color to white when spinner is active */
+}
+  .circle-div.spinner-active .spinner {
+    display: block;
+    animation: spin 1s linear infinite;
+    /* Other spinner styles and animations */
+}
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
+  
+  
 
 .circle-div:hover {
     border-style: solid;
@@ -663,6 +681,10 @@ body {
 
 
 @media screen and (min-width: 768px) {
+    .bell-case {
+        background-color: #303030;
+      
+    }
     .logo {
         width: 95px;
     }
@@ -723,6 +745,11 @@ body {
 .search-bar svg {
     width: 15px;
     padding-right: 8px;
+}
+.dashed {
+    border: 1px solid #ececec;
+    width: 350% !important;
+    margin-left: -5%;
 }
 
     /* *************************SECOND SECTION @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
@@ -803,7 +830,7 @@ body {
         padding: 12px;
         padding-left: 7px;
         padding-right: 7px;
-        padding-bottom: 8px;
+        padding-bottom: 9px;
     }
 
     .guide-content {
@@ -870,6 +897,7 @@ body {
         height: 100%;
         border-radius: 8px;
         background-color: #201f1f;
+        transition: width 0.5s ease;
     }
     
     .progress-unfilled {
@@ -879,6 +907,7 @@ body {
         height: 100%;
         border-radius: 8px;
         background-color: #dddada;
+        transition: width 0.5s ease;
     }
     
 
@@ -906,56 +935,78 @@ body {
         background: none;
     }
 
-    .circle-div {
-        width: 19px;
-        height: 19px;
-        border: 3px dashed #959595;
-        border-radius: 50%;
-        text-align: center;
-        cursor: pointer;
-        position: relative;
-        transition: transform 0.3s ease, border-style 0.3s ease, background-color 0.3s ease;
+
+.circle-div {
+    width: 19px;
+    height: 19px;
+    border: 3px dashed #959595;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, border-style 0.3s ease, background-color 0.3s ease;
+}
+
+@keyframes checkAnimation {
+    0% {
+        transform: rotate(0deg) scale(1);
+        background-color: transparent;
     }
 
-    @keyframes checkAnimation {
-        0% {
-            transform: rotate(0deg) scale(1);
-            background-color: transparent;
-        }
-
-        50% {
-            transform: rotate(180deg) scale(1.2);
-            background-color: transparent;
-        }
-
-        100% {
-            transform: rotate(360deg) scale(1);
-            background-color: #333;
-        }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+        background-color: transparent;
     }
 
-    .circle-div.checked {
-        animation: checkAnimation 0.5s ease;
+    100% {
+        transform: rotate(360deg) scale(1);
         background-color: #333;
-        border: 1px solid;
     }
+}
 
-    .circle-div.checked::after {
-        content: '\2713';
-        color: white;
-        font-size: 16px;
-        line-height: 19px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+.circle-div.checked {
+    animation: checkAnimation 0.5s ease;
+    background-color: #333;
+    border: 1px solid;
+}
+
+.circle-div.checked::after {
+    content: '\2713';
+    color: white;
+    font-size: 16px;
+    line-height: 19px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* .spinner {
+    animation: spin 1s linear infinite;
+    display: none;
+  } */
+  .circle-div.spinner-active {
+    border-color: white; /* Change border color to white when spinner is active */
+}
+  .circle-div.spinner-active .spinner {
+    display: block;
+    animation: spin 1s linear infinite;
+    /* Other spinner styles and animations */
+}
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-
-
-
-    .circle-div:hover {
-        border-style: solid;
+    100% {
+      transform: rotate(360deg);
     }
+  }
+  
+
+.circle-div:hover {
+    border-style: solid;
+}
+
 
     .first-task {
         display: flex;
@@ -1012,8 +1063,8 @@ body {
 
     .custom-button {
         padding: 7px 10px;
-        margin-top: 8px;
-        margin-bottom: 10px;
+        margin-top: 2px;
+        margin-bottom: 17px;
         margin-left: 31px;
         border-radius: 8px;
         width: 150px;
@@ -1035,8 +1086,8 @@ body {
 
     .custom-button-one {
         padding: 7px 10px;
-        margin-top: 8px;
-        margin-bottom: 10px;
+        margin-top: 2px;
+        margin-bottom: 17px;
         margin-left: 30px;
         border-radius: 8px;
         width: 110px;

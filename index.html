@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
@@ -164,7 +164,7 @@
         <div class="headline">
             <div class="first-headline">
                 <div class="fhf">
-                    <div class="complete-level">0 / 5 Completed</div>
+                    <div class="complete-level">0/5 Completed</div>
                     <div class="progress">
                         <div class="progress-filled"></div>
                         <div class="progress-unfilled"></div>
@@ -178,7 +178,17 @@
         <!-- ***************************CONTENT********************** -->
         <div class="task-content">
             <div class="first-task">
-                <div class="circle-div" onclick="toggleCheckmark(this);  increaseAndDecreaseCompletionLevel()"></div>
+                <div class="circle-div completion-marker" onclick="toggleCheckmark(this);  increaseAndDecreaseCompletionLevel()">
+                    <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 28 28" fill="none">
+                        <path
+                          d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                          stroke="#000"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                </div>
                 <div class="custom-text">Customize your online store</div>
             </div>
             
@@ -199,18 +209,18 @@
         <!-- ********************************************************************* -->
         <div class="task-content">
             <div class="first-task">
-                <div class="circle-div"  onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()">
-                    
+                <div class="circle-div completion-marker"  onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()">
+                    <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 28 28" fill="none">
+                        <path
+                          d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                          stroke="#000"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                 </div>
-                <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 28 28" fill="none">
-                    <path
-                      d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
-                      stroke="#000"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+               
                 <div class="custom-text">Add your first product</div>
             </div>
             
@@ -234,18 +244,26 @@
       
         <div class="task-content">
             <div class="first-task">
-                <div class="circle-div" onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()"></div>
-                <div class="custom-text">Customize your online store</div>
+                <div class="circle-div completion-marker" onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()">
+                    <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 28 28" fill="none">
+                        <path
+                          d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                          stroke="#000"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                </div>
+                <div class="custom-text">Add a custom domain</div>
             </div>
             
             <div class="second-task">
-
                 <div class="second-task-div">
                     <div class="content">Your current domain is 222219.myshopify.com but you can add a custom<br> domain to help customers find your online store.<a class="learn-link" href="http://">Learn more</a> </div>
                    <br>
                     <button class="custom-button-one">Add domain</button>
                 </div>
-               
                 <div class="img-task">
                     <img src="https://crushingit.tech/hackathon-assets/website.png" alt="image">
                 </div>
@@ -255,7 +273,17 @@
         <!-- ********************************************************* -->
         <div class="task-content">
             <div class="first-task">
-                <div class="circle-div"  onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()"></div>
+                <div class="circle-div completion-marker"  onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()">
+                    <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 28 28" fill="none">
+                        <path
+                          d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                          stroke="#000"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                </div>
                 <div class="custom-text">Name your store</div>
             </div>
             <div class="second-task">
@@ -277,7 +305,16 @@
       
         <div class="task-content">
             <div class="first-task">
-                <div class="circle-div"  onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()"></div>
+                <div class="circle-div completion-marker"  onclick="toggleCheckmark(this); increaseAndDecreaseCompletionLevel()">
+                    <svg class="spinner" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 28 28" fill="none">
+                        <path
+                          d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
+                          stroke="#000"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg></div>
                 <div class="custom-text">Setup a payment provider</div>
             </div>
            
@@ -298,7 +335,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
