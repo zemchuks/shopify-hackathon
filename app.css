@@ -13,6 +13,7 @@ body {
     padding: 15px;
     color: #E3E3E3;
 }
+
 .shopify-img {
     display: none;
 }
@@ -25,6 +26,9 @@ body {
     /* width: 43%; */
     margin: auto;
 }
+/* .center-section:focus {
+    outline: 1px solid #005BD3;
+} */
 
 .search-bar {
     display: flex;
@@ -33,15 +37,18 @@ body {
     background: #303030;
     color: #fff;
     width: 90%;
-    border-radius: 10px;
+    border-radius: 8px;
     padding-left: 7px;
     padding: 5px 0;
     position: relative;
     margin-left: 12px;
 }
 
-.search-bar:hover {
+/* .search-bar:hover {
     border: 1px solid #fff;
+} */
+.search-bar:focus {
+    outline: 1px solid #005BD3;
 }
 
 .search-bar input {
@@ -61,7 +68,8 @@ body {
     position: absolute;
     top: -1;
     left: 2.5%;
-    width: 12px;
+    width: 15px;
+    height: 15px;
 }
 
 .icons {
@@ -71,15 +79,16 @@ body {
 
 .bell-case {
     background-color: #1A1A1A;
-    padding: 2px 5px;
+    padding: 3px 5px;
     align-self: center;
     border-radius: 5px;
     border: none;
 }
-.bell-case:focus {
-    border: 2px solid #005BD3;
 
-}
+/* .bell-case:focus {
+    border: 1px solid #005BD3;
+
+} */
 
 .bell-case:hover {
     background: #616161;
@@ -101,7 +110,9 @@ body {
 .custom-div {
     margin-left: 6px;
     font-size: 13px;
+    font-weight: 500;
     display: none;
+    color: #E3E3E3;
 }
 
 .icon-div {
@@ -136,10 +147,12 @@ body {
     z-index: 1;
     /* box-shadow: 3px 3px 1px rgba(9, 9, 9, 0.659);; */
 }
+
 .invisibleClass {
     margin: 100px;
     display: none;
 }
+
 .dropdown-popup.active {
     display: block;
     opacity: 1;
@@ -185,9 +198,22 @@ body {
     background-color: #f0f0f0;
     border-radius: 10px;
     padding: 8px;
+    width: 250px;
     transition: background-color 0.3s, width 0.3s, padding 0.3s, margin 0.3s;
 
 }
+
+/* .store-section .first:focus {
+    border: 2px solid #005BD3;
+    border-radius: 5px;
+    background-color: #fff;
+} */
+
+/* .store-section .first {
+    text-decoration: none;
+    background: #000;
+    border: none;
+} */
 
 
 .others {
@@ -196,7 +222,8 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-.first a {
+
+.first  {
     text-decoration: none;
 }
 
@@ -207,11 +234,13 @@ body {
     transition: background-color 0.3s, width 0.3s, padding 0.3s, margin 0.3s;
     outline: none;
 }
-.others a:focus {
+
+/* .others a:focus {
     border: 2px solid #005BD3;
     border-radius: 5px;
     background-color: #fff;
-}
+} */
+
 .others a {
     text-decoration: none;
     color: #616161;
@@ -225,7 +254,11 @@ body {
     /* transform: rotate(2deg); */
     cursor: pointer;
 }
-
+.others a:focus-visible {
+    outline: 2px solid #005BD3;
+    border-radius: 5px;
+    width: 80%;
+}
 
 .small {
     font-size: 13px !important;
@@ -243,23 +276,23 @@ body {
     padding-left: 1px;
     margin-top: 4px;
     margin-left: 6px;
-    font-weight: 600;
+    font-weight: 500;
     color: #000;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .notif-popup {
     display: none;
     position: absolute;
-    top: 11%;
-    right: 0.7%;
+    top: 9%;
+    right:6px;
     background-color: #fff;
     border: 1px solid #dedede;
     border-radius: 14px;
     padding: 3px 10px;
     margin-top: 15px;
-    margin-right: 15px;
-    width: 85%;
+    /* margin-right: 15px; */
+    width: 358px;
     color: #616161;
     border: 0.5px solid #E5E5E5;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -275,6 +308,7 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -320,28 +354,42 @@ body {
 
 .dashed {
     border: 1px solid #ececec;
-    max-width: 400% !important;
-    /* margin-left: 8%; */
+    width:100% !important;
+    /* margin-left: -5%; */
 }
 
 /* *************************SECOND SECTION @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.invisibleDiv {
+    margin: 70px;
+    display: none;
+}
+
 .plan-div {
-    background-color: #1c181d;
+    background-color: #1A1A1A;
     padding: 8px 2px;
     display: block;
     align-items: center;
     justify-content: space-between;
-    color: white;
-    max-width: 845px;
+    color: #E3E3E3;
+    max-width: 835px;
     margin: auto;
     margin-top: 30px;
     position: relative;
 }
 
 .text-left {
-    font-size: 14px;
-    margin-left: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 8px;
     color: #d3cccc;
+}
+
+.break-after::after {
+
+    content: "\A";
+    /* Adding a line break character */
+    white-space: pre;
+    /* Preserving the line break */
 }
 
 .button-right {
@@ -356,8 +404,9 @@ body {
     font-weight: bold;
     margin: 4px;
 }
+
 .button-right a {
-    text-decoration:none;
+    text-decoration: none;
     color: #2a2a2a;
 }
 
@@ -368,8 +417,8 @@ body {
 
 .cancel-svg {
     position: absolute;
-    top: 15px;
-    right: 6px;
+    top: 28px;
+    right: 8px;
     cursor: pointer;
 }
 
@@ -377,7 +426,7 @@ body {
 .content-div {
     background-color: #fff;
     border: 1px solid #dedede;
-   
+
     /* padding-top: 10px; */
     color: #000;
     max-width: 100%;
@@ -398,7 +447,13 @@ body {
 }
 
 .up-arrow>img {
-    width: 30px;
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+}
+
+.up-arrow {
+    margin-right: 10px;
 }
 
 .up-arrow:hover {
@@ -409,9 +464,14 @@ body {
     /* height: 30px; */
 }
 
+.up-arrow:focus-visible {
+    border: 2px solid #005BD3;
+}
+
 .guide-text,
 .complete-level {
     font-size: 14px;
+    font-weight: 400;
     padding-left: 10px;
 }
 
@@ -442,9 +502,10 @@ body {
     margin-top: 25px;
     margin-left: 10px;
     width: 90px;
-    height: 3px;
-    border-radius: 8px;
-    background-color: #fff;
+    height: 4px;
+    border-radius: 28px;
+    background-color: #dddada;
+    color: #dddada;
     border: 1px solid #dedede;
     position: relative;
     /* Position relative for absolute positioning of filled/unfilled divs */
@@ -500,9 +561,9 @@ body {
 }
 
 .circle-div {
-    width: 19px;
-    height: 19px;
-    border: 3px dashed #959595;
+    width: 18px;
+    height: 18px;
+    border: 2px dashed #959595;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
@@ -510,6 +571,9 @@ body {
     transition: transform 0.3s ease, border-style 0.3s ease, background-color 0.3s ease;
 }
 
+/* .circle-div:focus {
+    outline: 2px solid #005BD3; 
+} */
 @keyframes checkAnimation {
     0% {
         transform: rotate(0deg) scale(1);
@@ -537,44 +601,50 @@ body {
     content: '\2713';
     color: white;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 16px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .spinner {
-    animation: spin 1s linear infinite;
+    animation: spin 0.7s linear infinite;
     display: none;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-    .circle-div.spinner-active {
-    border-color: white; /* Change border color to white when spinner is active */
 }
-  .circle-div.spinner-active .spinner {
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.circle-div.spinner-active {
+    border-color: #F1F0F0;
+    /* Change border color to white when spinner is active */
+}
+
+.circle-div.spinner-active .spinner {
     display: block;
-    animation: spin 1s linear infinite;
+    animation: spin 0.7s linear infinite;
     /* Other spinner styles and animations */
 }
-  
-  @keyframes spin {
+
+@keyframes spin {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  
+}
+
+
 
 .circle-div:hover {
     border-style: solid;
@@ -585,11 +655,25 @@ body {
 }
 
 .custom-text {
-    margin-left: 8px;
+    margin-left: 4px;
     margin-top: 2px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
     cursor: pointer;
-    color: #414141;
+    color: #303030;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'inter';
+
 }
+
+/* .custom-text:focus:not(:focus-visible) {
+    outline: 2px solid #005BD3;
+    border-radius: 4px;
+} */
+
 
 .second-task {
     /* margin-bottom: 40px; */
@@ -603,7 +687,7 @@ body {
     margin-left: 35px;
     font-size: 14px;
     font-weight: 500;
-    color: #686767;
+    color: #616161;
     padding-bottom: 5px;
 }
 
@@ -629,6 +713,7 @@ body {
 
 .text {
     margin-left: 35px;
+    margin-bottom: 12px;
     font-size: 13px;
     cursor: pointer;
 }
@@ -639,17 +724,24 @@ body {
     margin-bottom: 10px;
     margin-left: 31px;
     border-radius: 8px;
-    width: 150px;
+    width: 130px;
     background-color: #404040;
     border: 3px solid #757474;
     border-bottom: 1px;
-    color: #ffffff;
-    font-size: 14px;
+    color: #F6F3F6;
+    font-weight: 500;
+    line-height: 16px;
+    font-size: 13px;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     outline: none;
     /* box-shadow: 0 -3px 2px -1px rgba(23, 23, 23, 0.854) */
     box-shadow: 0 4px 1px -1px rgba(0, 0, 0, 0.854);
+}
+
+.custom-button:focus {
+    outline: 2px solid #005BD3;
+    /* Example focus styling */
 }
 
 .custom-button:hover {
@@ -681,13 +773,25 @@ body {
 
 
 @media screen and (min-width: 768px) {
+    .small {
+        font-size: 13px !important;
+        color: #959595;
+        margin-top: -10px;
+    }
+    
     .bell-case {
         background-color: #303030;
-      
+
     }
+    .bell-case:focus-visible {
+        outline: 2px solid #005BD3;
+    
+    }
+
     .logo {
         width: 95px;
     }
+
     .name-case {
         display: flex;
         background-color: #303030;
@@ -703,63 +807,124 @@ body {
         background: #616161;
         cursor: pointer;
     }
-    .name-case:focus {
-        border: 2px solid #005BD3;
-        /* border-radius: 5px; */
+
+    .name-case:focus-visible {
+        outline: 2px solid #005BD3;
+        border-radius: 5px;
         /* background-color: #fff;   */
     }
+
     .custom-div {
         margin-left: 6px;
         font-size: 13px;
+        font-weight: 500;
+        line-height: 15px;
         display: flex;
+        color: #E3E3E3;
+
     }
-  
-  .center-section {
-    width: 38%;
-    margin: auto;
-}
 
-.search-bar {
-    border: 1px solid #616161;
-    background: #303030;
-    color: #fff;
-    /* width: 100%; */
-    padding: 7px;
-    margin-left: 75px;
+    .center-section {
+        width: 38%;
+        margin: auto;
+    }
 
-    border-radius: 10px;
-}
-.search-bar:focus {
-    border: 2px solid #fff;
-}
+    .search-bar {
+        border: 1px solid #616161;
+        background: #303030;
+        color: #fff;
+        /* width: 100%; */
+        padding: 7px;
+        margin-left: 75px;
 
-.search-bar:hover {
-    border: 1px solid #fff;
-}
+        border-radius: 10px;
+    }
 
-.search-bar input {
-    padding-left: 30px;
-    margin-right: 5px;
-}
+    .search-bar:focus-visible {
+        outline: 2px solid #005BD3;
+    }
+    /* .center-section:focus-visible {
+        outline: 1px solid #005BD3;
+        margin: auto;
+        width: 38%;
+    } */
 
-.search-bar svg {
-    width: 15px;
-    padding-right: 8px;
-}
-.dashed {
-    border: 1px solid #ececec;
-    width: 350% !important;
-    margin-left: -5%;
-}
+    .search-bar:hover {
+        border: 1px solid #fff;
+    }
+
+    .search-bar input {
+        padding-left: 30px;
+        margin-right: 5px;
+    }
+
+    .search-bar svg {
+        width: 16px;
+        height: 16px;
+        padding-right: 8px;
+    }
+
+    .dashed {
+        border: 1px solid #ececec;
+        width: 350% !important;
+        margin-left: -5%;
+    }
+
+    .store-section.first a:focus-visible {
+        outline: 2px solid #005BD3;
+        border-radius: 5px;
+    }
+
+    .store-section .first {
+        text-decoration: none;
+        background: none;
+    }
 
     /* *************************SECOND SECTION @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+    .invisibleDiv {
+        margin: 110px;
+        display: none;
+    }
+
     .plan-div {
         display: flex;
+        background: #E3E3E3;
         border-radius: 6px;
+        background-color: #1A1A1A;
+        /* padding: 10px 8px 12px 14px; */
     }
+
+    .text-left {
+        margin-left: 18px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18.2px;
+    }
+
+    .cancel-svg {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+        cursor: pointer;
+    }
+    .cancel-svg:focus-visible {
+        outline: 2px solid #005BD3;
+    }
+
+    .break-after::after {
+        content: "\A";
+        /* Adding a line break character */
+        white-space: pre;
+        /* Preserving the line break */
+        display: none;
+        /* Hide the pseudo-element */
+    }
+
     .shopify-img {
         display: block;
     }
+
     .shopify-mobile {
         display: none;
     }
@@ -768,7 +933,7 @@ body {
         display: none;
         position: absolute;
         top: 10%;
-        right: -0.6%;
+        right: 0.5%;
         background-color: #fff;
         border: 1px solid #dedede;
         border-radius: 14px;
@@ -779,11 +944,12 @@ body {
         border: 0.5px solid #E5E5E5;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
+
     .dropdown-popup {
         display: none;
         position: absolute;
         top: 11%;
-        right: -0.2%;
+        right: 0.2%;
         background-color: #fff;
         border-radius: 14px;
         padding: 3px 5px;
@@ -796,13 +962,14 @@ body {
         border: 0.5px solid #E5E5E5;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         /* box-shadow: 3px 3px 1px rgba(9, 9, 9, 0.659);; */
-      
+
     }
+
     .button-right {
         background-color: white;
         color: #1c181d;
         padding: 7px 17px;
-        margin-right: 40px;
+        margin-right: 50px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -810,10 +977,14 @@ body {
         font-weight: bold;
         /* margin: 4px; */
     }
+    .button-right:focus-visible {
+        outline: 4px solid #005BD3;
+    }
     .button-right a {
-        text-decoration:none;
+        text-decoration: none;
         color: #2a2a2a;
     }
+
     /* ************************8CONTENT DIV****************************** */
     .content-div {
         background-color: #fff;
@@ -839,7 +1010,14 @@ body {
     }
 
     .up-arrow>img {
-        width: 30px;
+        /* width: 30px; */
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+    }
+
+    .up-arrow {
+        margin-right: 10px;
     }
 
     .up-arrow:hover {
@@ -850,19 +1028,27 @@ body {
         /* height: 30px; */
     }
 
-    .guide-text,
-    .complete-level {
+    .up-arrow:focus {
+        outline: 1px #005BD3;
+    }
+
+    .guide-text {
         font-size: 14px;
+        font-weight: 400;
         padding-left: 10px;
     }
 
     .complete-level {
         margin-top: 17px;
+        font-size: 13px;
+        font-weight: 400;
     }
 
     .select-plan {
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 15px;
         padding-left: 9px;
+        line-height: 19.6px;
     }
 
     .first-headline {
@@ -883,13 +1069,14 @@ body {
         margin-top: 25px;
         margin-left: 10px;
         width: 90px;
-        height: 3px;
-        border-radius: 8px;
-        background-color: #fff;
+        height: 4px;
+        border-radius: 28px;
+        background-color: #dddada;
+        color: #dddada;
         border: 1px solid #dedede;
         position: relative;
     }
-    
+
     .progress-filled {
         position: absolute;
         top: 0;
@@ -899,7 +1086,7 @@ body {
         background-color: #201f1f;
         transition: width 0.5s ease;
     }
-    
+
     .progress-unfilled {
         position: absolute;
         top: 0;
@@ -909,7 +1096,7 @@ body {
         background-color: #dddada;
         transition: width 0.5s ease;
     }
-    
+
 
     .task-content {
         /* display: block; */
@@ -936,76 +1123,88 @@ body {
     }
 
 
-.circle-div {
-    width: 19px;
-    height: 19px;
-    border: 3px dashed #959595;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.3s ease, border-style 0.3s ease, background-color 0.3s ease;
-}
-
-@keyframes checkAnimation {
-    0% {
-        transform: rotate(0deg) scale(1);
-        background-color: transparent;
+    .circle-div {
+        width: 18px;
+        height: 18px;
+        border: 3px dashed #8A8A8A;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s ease, border-style 0.3s ease, background-color 0.3s ease;
     }
 
-    50% {
-        transform: rotate(180deg) scale(1.2);
-        background-color: transparent;
+    
+    .circle-div:focus-visible {
+        outline: 3px solid #005BD3;
+
+        /* border-radius: 50%; */
+        
     }
 
-    100% {
-        transform: rotate(360deg) scale(1);
+    @keyframes checkAnimation {
+        0% {
+            transform: rotate(0deg) scale(1);
+            background-color: transparent;
+        }
+
+        50% {
+            transform: rotate(180deg) scale(1.2);
+            background-color: transparent;
+        }
+
+        100% {
+            transform: rotate(360deg) scale(1);
+            background-color: #333;
+        }
+    }
+
+    .circle-div.checked {
+        animation: checkAnimation 0.5s ease;
         background-color: #333;
+        border: 1px solid;
     }
-}
 
-.circle-div.checked {
-    animation: checkAnimation 0.5s ease;
-    background-color: #333;
-    border: 1px solid;
-}
+    .circle-div.checked::after {
+        content: '\2713';
+        color: white;
+        font-size: 15px;
+        line-height: 16px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-.circle-div.checked::after {
-    content: '\2713';
-    color: white;
-    font-size: 16px;
-    line-height: 19px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-/* .spinner {
+    /* .spinner {
     animation: spin 1s linear infinite;
     display: none;
   } */
-  .circle-div.spinner-active {
-    border-color: white; /* Change border color to white when spinner is active */
-}
-  .circle-div.spinner-active .spinner {
-    display: block;
-    animation: spin 1s linear infinite;
-    /* Other spinner styles and animations */
-}
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
+    .circle-div.spinner-active {
+        border-color: #F1F0F0;
+        /* Change border color to white when spinner is active */
     }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
 
-.circle-div:hover {
-    border-style: solid;
-}
+    .circle-div.spinner-active .spinner {
+        display: block;
+        animation: spin 0.4s linear infinite;
+        /* Other spinner styles and animations */
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
+    .circle-div:hover {
+        border-style: solid;
+    }
 
 
     .first-task {
@@ -1013,16 +1212,30 @@ body {
     }
 
     .custom-text {
-        margin-left: 8px;
+        margin-left: 4px;
         margin-top: 2px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
         cursor: pointer;
-        color: #414141;
+        color: #303030;
+        border: none;
+        outline: none;
+        background: none;
+        font-family: 'inter';
+
+    }
+
+    .custom-text:focus-visible {
+        outline: 2px solid #005BD3;
+        border-radius: 4px;
     }
 
     .second-task {
         /* margin-bottom: 40px; */
         display: flex;
         justify-content: space-between;
+        transition: all 0.5s ease;
         /* align-items: start; */
     }
 
@@ -1031,7 +1244,7 @@ body {
         margin-left: 35px;
         font-size: 14px;
         font-weight: 500;
-        color: #686767;
+        color: #616161;
         padding-bottom: 5px;
     }
 
@@ -1063,20 +1276,31 @@ body {
 
     .custom-button {
         padding: 7px 10px;
-        margin-top: 2px;
-        margin-bottom: 17px;
+        margin-top: 8px;
+        margin-bottom: 10px;
         margin-left: 31px;
         border-radius: 8px;
-        width: 150px;
+        width: 130px;
         background-color: #404040;
         border: 3px solid #757474;
         border-bottom: 1px;
-        color: #ffffff;
-        font-size: 14px;
+        color: #F6F3F6;
+        font-weight: 500;
+        line-height: 16px;
+        font-size: 13px;
         cursor: pointer;
         transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
         outline: none;
+        /* box-shadow: 0 -3px 2px -1px rgba(23, 23, 23, 0.854) */
         box-shadow: 0 4px 1px -1px rgba(0, 0, 0, 0.854);
+    }
+
+    .custom-button:focus-visible {
+        outline: 2px solid #005BD3;
+        /* Example focus styling */
+    }
+    .alert:focus-visible {
+        outline: 2px solid #005BD3;
     }
 
     .custom-button:hover {
@@ -1100,6 +1324,11 @@ body {
         transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
         outline: none;
         box-shadow: 0 4px 1px -1px rgba(0, 0, 0, 0.854);
+    }
+
+    .custom-button-one:focus {
+        outline: 2px solid #005BD3;
+        /* Example focus styling */
     }
 
     .task-content {
